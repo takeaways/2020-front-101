@@ -1,28 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-import Home from "./Home";
-import About from "./About";
-import Profile from "./Profile";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Header from "./components/Header";
+import Posts from "./routes/Posts";
+import MyPage from "./routes/MyPage";
+import Login from "./routes/Login";
+import Search from "./routes/Search";
+import NoMatch from "./routes/NoMatch";
 
 function App() {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/">홈</Link>
-        </li>
-        <li>
-          <Link to="/about">about</Link>
-        </li>
-        <li>
-          <Link to="/profiles">profile</Link>
-        </li>
-      </ul>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/profiles/:username" component={Profile} />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about/:username" component={About} />
+          <Route path="/posts" component={Posts} />
+          <Route path="/search" component={Search} />
+          <Route path="/me" component={MyPage} />
+          <Route path="/login" component={Login} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

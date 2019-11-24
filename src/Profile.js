@@ -15,7 +15,7 @@ const Profile = ({ match }) => {
   console.dir(match);
   const { username } = match.params;
   const profile = profileData[username];
-
+  console.log(match.params);
   if (!profile) {
     return <div>Not Found User</div>;
   }
