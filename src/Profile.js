@@ -13,7 +13,7 @@ const profileData = {
 
 //자동으로 넣어주는 값입니다.
 const Profile = ({ match }) => {
-  console.dir(match);
+  console.dir("--",match);
   //url parameter
   const { username } = match.params;
   const profile = profileData[username];
