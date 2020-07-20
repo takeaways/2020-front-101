@@ -8,6 +8,7 @@ import MyPage from "./routes/MyPage";
 import Login from "./routes/Login";
 import Search from "./routes/Search";
 import NoMatch from "./routes/NoMatch";
+import Profile from './Profile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/search" component={Search} />
           <Route path="/me" component={MyPage} />
           <Route path="/login" component={Login} />
+          <Route path="/profile/:username" component={Profile} />
           <Route component={NoMatch} />
         </Switch>
       </div>

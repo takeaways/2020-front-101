@@ -42,3 +42,26 @@
 ### StaticRouter
 
 1. 서버사이드 렌더링에서 사용하는 용도.
+
+### Route
+
+- <Route path="/login" component={Login} />
+
+1. 라우트를 정의할 때 사용하는 컴포넌트
+
+### Link
+
+- to="/path"
+
+1. 사용한 Router의 주소를 바꿈 a 태그지만 새로고침 안됨
+
+### URL Parameter
+
+- /profiles/gi
+
+### Query
+
+- npm install qs
+- 쿼리를 파싱해주는 라이브러리를 사용할 수 있다.
+
+### 서브라우트 만들기.
