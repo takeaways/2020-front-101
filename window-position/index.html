@@ -55,27 +55,40 @@
     <div class="display"></div>
     <div class="list"></div>
     <script>
+        let current = 0;
         const $list = document.querySelector(".list");
         const $display = document.querySelector(".display");
         const fragment = document.createDocumentFragment();
 
         $list.addEventListener("click", (e) => {
-            const t = e.target.getBoundingClientRect();
+            const target = e.target
+            const targetData = target.getBoundingClientRect();
+
+
+            const before = document.querySelector(`[data-id = "${current}"]`)
+            before.classList.remove("active");
+            target.classList.add("active");
+            current = target.dataset.id
+
+
             $display.innerHTML = `
-                x:${t.x}
-                y:${t.y}
-                width:${t.width}
-                height:${t.height}
-                x:${t.x}
+                x:${targetData.x}
+                y:${targetData.y}
+                width:${targetData.width}
+                height:${targetData.height}
             `
         })
-        const createBox = () => {
+        const createBox = (index) => {
             const box = document.createElement("div");
             box.setAttribute("class", "box")
+            box.dataset.id = index
+            if (index === 0) {
+                box.classList.add("active")
+            }
             return box
         }
         for (let i = 0; i < 20; i++) {
-            fragment.appendChild(createBox())
+            fragment.appendChild(createBox(i))
         }
         $list.appendChild(fragment)
 
