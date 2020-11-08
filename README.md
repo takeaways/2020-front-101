@@ -68,4 +68,5 @@
 
 1. (HTML)DOM + CSS(external, embedded, inline, user-aget stylesheet) = CSSON
    - compute styles based on CSS cascading rules
-     ![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/csson.png)
+
+![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/csson.png)
