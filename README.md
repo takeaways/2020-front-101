@@ -72,3 +72,12 @@
 ![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/csson.png)
 
 ### 3️⃣ ⚜️ 성능보장 렌더링 순서!!!
+
+1. Critical rendering path
+   - request/response -> loading ->scripting -> redering -> layout -> painting
+   1. Construction
+      - DOM + CSSOM + RenderTree
+   2. Operation
+      - Layout + Paint + Composition
+
+![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/render.png)
