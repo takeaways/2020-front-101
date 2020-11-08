@@ -18,7 +18,7 @@
 > 2. [Web API collection](https://developer.mozilla.org/en-US/docs/Web/API)
 > 3. [Security](https://www.thoughtco.com/what-javascript-cannot-do-2037666)
 
-## Browser 구조 분석
+### Browser 구조 분석
 
 1. Window : 전체적인 창( size, scroll, load)
    - DOM + BOM(navigator, location, fetch, storage) + Javascript
@@ -26,3 +26,17 @@
 
 > 1.  [size](https://nomadgeoniljang.github.io/2020-front-101/window-size/)
 > 2.  [좌표](https://nomadgeoniljang.github.io/2020-front-101/window-position)
+
+### load
+
+1. async, defer("Contend Loaded 이전에")
+   - <script src="" defer or async>
+2. window.addEventListener("load",()=>{})
+   - 모든리소스 로딩 (image, css, js...etc)
+   - "DOMContentLoaded" : only HTML
+   - "beforeunload" - 페이지에서 나갈떄 발생
+   - "unload" - resource is being unload
+
+## PROJECT1
+
+- [project1](https://nomadgeoniljang.github.io/2020-front-101/project1-coordinates/)

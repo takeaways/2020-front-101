@@ -77,7 +77,7 @@
 
         document.querySelector(".by").addEventListener("click", (e) => {
             console.log("000")
-            window.scrollBy(0, 100)
+            window.scrollBy({ top: 100, behavior: "smooth" })
         })
         document.querySelector(".to").addEventListener("click", (e) => {
             console.log("000")
