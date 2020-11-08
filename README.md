@@ -24,4 +24,4 @@
    - DOM + BOM(navigator, location, fetch, storage) + Javascript
 2. Document : 작성한 HTML이 보이는 곳
 
-> [size](window-size)
+> [size](./window-size)
