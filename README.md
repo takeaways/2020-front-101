@@ -1,6 +1,6 @@
 # Base for Front End Developer
 
-## WEB APIs
+## 🌟 WEB APIs
 
 - 브라우저에 대해서 이해하자!
 
@@ -42,7 +42,22 @@
 - [project1](https://nomadgeoniljang.github.io/2020-front-101/project1-coordinates/)
 - [project2](https://nomadgeoniljang.github.io/2020-front-101/project2-rabbits/)
 
-## DOM 정복하자!
+## 💥 DOM 정복하자!
 
 - [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)
+
+1. Document Object Model
+   - 브라우저는 HTML tag를 분석해서 Node로 만든다 -> DOM Tree🌴 를 만든다!!!.
+   - HTML tag는 그와 같은 엘레먼드가 있다. (Memory에 저장이 된다.)
+   - Event Target <- Node <- (Document, Element(HTMLElement), Text)
+
+### 1️⃣ Node
+
+- [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
+- [Event Target](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
+
+1. 모든 노드는 이벤트 타겟이다.
+   - addEventListener()
+   - removeEventListener()
+   - dispatchEvent()
