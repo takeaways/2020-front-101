@@ -70,3 +70,5 @@
    - compute styles based on CSS cascading rules
 
 ![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/csson.png)
+
+### 3️⃣ ⚜️ 성능보장 렌더링 순서!!!
