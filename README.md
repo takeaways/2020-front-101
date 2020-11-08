@@ -74,10 +74,20 @@
 ### 3️⃣ ⚜️ 성능보장 렌더링 순서!!!
 
 1. Critical rendering path
+   [css trigger](http://csstriggers.com)
+
    - request/response -> loading ->scripting -> redering -> layout -> painting
-   1. Construction
+
+   1. Construction : time to first render
+      - 불필요한 태그⬇️ + CSS⬇️
       - DOM + CSSOM + RenderTree
    2. Operation
-      - Layout + Paint + Composition
+
+      - Paint를 자주 발생하지 않게 만든다!!!
+      - Composition만 발생할 수 있도록 한다.
+
+      - Layer 별로 준비를 한다!
+        - 브라우저가 스스로 성능을 개선하기 위해서 - 전체 적인 web을 그리는 것이아니라 layer만 그리면 된다.
+      - Layout(배치) + Paint(각 요소, 비트맵 형태로 만들어서 준비 한다.) + Composition
 
 ![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/render.png)
