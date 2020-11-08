@@ -13,6 +13,7 @@
 7. Storage APIs
 
 > 관련자료 읽어 보세요
-> [MDN Web API](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
-> [Web API collection](https://developer.mozilla.org/en-US/docs/Web/API)
-> [Security](https://www.thoughtco.com/what-javascript-cannot-do-2037666)
+>
+> 1. [MDN Web API](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
+> 2. [Web API collection](https://developer.mozilla.org/en-US/docs/Web/API)
+> 3. [Security](https://www.thoughtco.com/what-javascript-cannot-do-2037666)
