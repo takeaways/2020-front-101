@@ -37,7 +37,12 @@
    - "beforeunload" - 페이지에서 나갈떄 발생
    - "unload" - resource is being unload
 
-## PROJECT
+### PROJECT
 
 - [project1](https://nomadgeoniljang.github.io/2020-front-101/project1-coordinates/)
 - [project2](https://nomadgeoniljang.github.io/2020-front-101/project2-rabbits/)
+
+## DOM 정복하자!
+
+- [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [DOM API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)
