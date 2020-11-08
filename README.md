@@ -61,3 +61,11 @@
    - addEventListener()
    - removeEventListener()
    - dispatchEvent()
+
+### 2️⃣ CSSOM
+
+- [CSSOM](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model)
+
+1. (HTML)DOM + CSS(external, embedded, inline, user-aget stylesheet) = CSSON
+   - compute styles based on CSS cascading rules
+     ![CSSOM](images/cssom.png)
