@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: hotpink;
+        }
+
+        div {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const body = document.querySelector("body");
+        const box = document.createElement("div");
+        box.setAttribute("class", "box")
+
+
+        window.addEventListener("resize", () => {
+            box.innerHTML = `
+                모니터 window.screen : ${window.screen.height}, ${window.screen.width} <br/>
+                브라우저 사이즈 window.outer : ${window.outerHeight}, ${window.outerWidth} <br/>
+                페이지 전체 window.inner : ${window.innerHeight}, ${window.innerWidth} <br/>
+                문서 전체 스크롤 뺀 영역 documentElement.clinetWidth : ${document.documentElement.clientHeight}, ${document.documentElement.clientWidth}
+            `
+        })
+        body.appendChild(box)
+
+
+    </script>
+</body>
+
+</html>
