@@ -5,6 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .box.active {
+            background-color: red;
+        }
+
+        .display {
+            position: sticky;
+            background-color: gold;
+            top: 0;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -28,6 +52,34 @@
             패아자 자체에서 떨어진 위치! scroll이있다면 문서 최상단 부터
         </p>
     </div>
+    <div class="display"></div>
+    <div class="list"></div>
+    <script>
+        const $list = document.querySelector(".list");
+        const $display = document.querySelector(".display");
+        const fragment = document.createDocumentFragment();
+
+        $list.addEventListener("click", (e) => {
+            const t = e.target.getBoundingClientRect();
+            $display.innerHTML = `
+                x:${t.x}
+                y:${t.y}
+                width:${t.width}
+                height:${t.height}
+                x:${t.x}
+            `
+        })
+        const createBox = () => {
+            const box = document.createElement("div");
+            box.setAttribute("class", "box")
+            return box
+        }
+        for (let i = 0; i < 20; i++) {
+            fragment.appendChild(createBox())
+        }
+        $list.appendChild(fragment)
+
+    </script>
 </body>
 
 </html>
