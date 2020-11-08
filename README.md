@@ -37,6 +37,7 @@
    - "beforeunload" - 페이지에서 나갈떄 발생
    - "unload" - resource is being unload
 
-## PROJECT1
+## PROJECT
 
 - [project1](https://nomadgeoniljang.github.io/2020-front-101/project1-coordinates/)
+- [project2](https://nomadgeoniljang.github.io/2020-front-101/project2-rabbits/)

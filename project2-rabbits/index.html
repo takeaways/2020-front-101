@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll</title>
-    <style></style>
-  </head>
-  <body>
-    <script></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll</title>
+  <style>
+    body {
+      background-color: purple;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 35%;
+    }
+
+    button {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      background-color: tomato;
+      margin-bottom: 20px;
+      color: white;
+      outline: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    button:active {
+      opacity: 1;
+    }
+
+    img {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <button>Find a rabbit 🐇</button>
+  <script>
+    const button = document.querySelector("button");
+    const body = document.querySelector("body");
+    const frag = document.createDocumentFragment();
+    const rabbitPosition = Math.floor(Math.random() * 100);
+    for (let i = 0; i < 100; i++) {
+      const image = document.createElement("img");
+      if (i === rabbitPosition) {
+        image.setAttribute("src", "img/rabbit.png")
+        image.setAttribute("alt", "rabbit");
+      } else {
+        image.setAttribute("src", "img/carrot.png")
+        image.setAttribute("alt", "carrot");
+      }
+      frag.appendChild(image)
+    }
+    body.appendChild(frag)
+    button.addEventListener("click", handleFind)
+    function handleFind() {
+      const rabbit = document.querySelector(`img[alt=rabbit]`)
+      rabbit.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      })
+    }
+
+  </script>
+</body>
+
 </html>
