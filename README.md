@@ -24,5 +24,5 @@
    - DOM + BOM(navigator, location, fetch, storage) + Javascript
 2. Document : 작성한 HTML이 보이는 곳
 
-> 1.  [size](/window-size)
-> 2.  [좌표](/window-position)
+> 1.  [size](https://nomadgeoniljang.github.io/2020-front-101/window-size/)
+> 2.  [좌표](https://nomadgeoniljang.github.io/2020-front-101/window-position)
