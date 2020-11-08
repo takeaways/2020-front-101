@@ -17,20 +17,25 @@
 </head>
 
 <body>
+    윈도우 사이즈를 변경해 보세요
     <script>
         const body = document.querySelector("body");
         const box = document.createElement("div");
         box.setAttribute("class", "box")
 
-
-        window.addEventListener("resize", () => {
-            box.innerHTML = `
+        function update(dom) {
+            dom.innerHTML = `
                 모니터 window.screen : ${window.screen.height}, ${window.screen.width} <br/>
                 브라우저 사이즈 window.outer : ${window.outerHeight}, ${window.outerWidth} <br/>
                 페이지 전체 window.inner : ${window.innerHeight}, ${window.innerWidth} <br/>
                 문서 전체 스크롤 뺀 영역 documentElement.clinetWidth : ${document.documentElement.clientHeight}, ${document.documentElement.clientWidth}
             `
+        }
+
+        window.addEventListener("resize", () => {
+            update(box)
         })
+        update(box)
         body.appendChild(box)
 
 
