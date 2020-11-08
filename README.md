@@ -91,3 +91,9 @@
       - Layout(배치) + Paint(각 요소, 비트맵 형태로 만들어서 준비 한다.) + Composition
 
 ![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/render.png)
+
+## 💥 DOM 정복하자 실전편!
+- [FontAwesome](https://fontawesome.com/)
+
+
+
