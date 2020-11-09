@@ -93,7 +93,8 @@
 ![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/render.png)
 
 ## 💥 DOM 정복하자 실전편!
+
+- [Shopping](https://nomadgeoniljang.github.io/2020-front-101/project3-shopping/)
 - [FontAwesome](https://fontawesome.com/)
-
-
-
+- [CSS Gradient](https://cssgradient.io/)
+- [Box Shadow CSS Generator](https://www.cssmatic.com/box-shadow)
