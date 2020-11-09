@@ -33,6 +33,10 @@ class Shopping {
     this.update();
     this.$input.value = "";
     this.$input.focus();
+    this.$items.scrollBy({
+      top: this.$items.scrollHeight,
+      behavior: "smooth",
+    });
   }
 
   onDelete(id) {

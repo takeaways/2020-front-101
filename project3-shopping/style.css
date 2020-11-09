@@ -29,7 +29,7 @@ body {
   border-radius: 20px;
 
   display: grid;
-  grid-template-rows: 0.1fr 0.8fr 0.1fr;
+  grid-template-rows: 0.1fr 0.9fr 100px;
 }
 
 .header {
@@ -73,6 +73,7 @@ body {
 }
 
 .footer {
+  height: 100%;
   background: rgba(237, 193, 211);
   background: linear-gradient(
     166deg,
@@ -89,6 +90,7 @@ body {
   outline: none;
   font-size: 24px;
   padding: 0 16px;
+  margin-bottom: 12px;
 }
 
 .footer__button {
@@ -99,7 +101,6 @@ body {
   color: white;
   font-size: 24px;
   transition: all 0.3s ease-in;
-  vertical-align: middle;
 
   /* display: flex;
   align-items: center;
@@ -107,4 +108,10 @@ body {
 }
 .footer__button:hover {
   transform: scale(1.1) rotate(45deg);
+}
+
+@media screen and (min-width: 600px) {
+  .list {
+    width: 360px;
+  }
 }
