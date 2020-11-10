@@ -98,3 +98,17 @@
 - [FontAwesome](https://fontawesome.com/)
 - [CSS Gradient](https://cssgradient.io/)
 - [Box Shadow CSS Generator](https://www.cssmatic.com/box-shadow)
+
+### Bubbling and Capturing
+
+- [Bubbling and Capturing](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture)
+
+1. 버블링이란?
+   - 자식에서 부모로 이벤트가 전파되는 현상
+   - event.stopPropagation()
+   - event.stopImmediatePropagation()
+     - 하지만 사용하지 말자!! 다른 사람이 무엇을 하려고 리슨하고 있는거를 무시해버리는 것!!
+   - target: 발생시킨 주체
+   - currentTarget: this 바로 나를 가르킨다.
+
+### 이벤트 위임 : Delegation
