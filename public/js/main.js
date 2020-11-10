@@ -11,6 +11,10 @@ const gameBtn = document.querySelector(".game__button");
 const gameTimer = document.querySelector(".game__timer");
 const gameScore = document.querySelector(".game__score");
 
+const popUp = document.querySelector(".pop-up");
+const popUpText = document.querySelector(".pop-up__message");
+const popUpRefresh = document.querySelector(".pop-up__refresh");
+
 let started = false;
 let score = 0;
 let timer = undefined;
@@ -24,7 +28,9 @@ gameBtn.addEventListener("click", () => {
   started = !started;
 });
 
-function stopGame() {}
+function stopGame() {
+  stopGameTimer();
+}
 function startGame() {
   initGame();
   showStopButton();
@@ -57,19 +63,32 @@ function updateTimerText(time) {
   gameTimer.innerText = `${minutes} : ${seconds}`;
 }
 
+function stopGameTimer() {
+  clearInterval(timer);
+  hideGameButton();
+  showPopUpWithText("REPLAY🌟");
+}
+function hideGameButton() {
+  gameBtn.style.visibility = "hidden";
+}
+function showPopUpWithText(text) {
+  popUpText.innerText = text;
+  popUp.classList.remove("pop-up--hide");
+}
+
 //TODO: init
 function initGame() {
   field.innerHTML = "";
   gameScore.innerText = CARROT_COUNT;
-  addItem("carrot", CARROT_COUNT, "/public/images/carrot.png");
-  addItem("carrot", BUG_COUNT, "/public/images/bug.png");
+  addItem("carrot", CARROT_COUNT, "./public/images/carrot.png");
+  addItem("carrot", BUG_COUNT, "./public/images/bug.png");
 }
 
 function addItem(className, count, imgPath) {
   const x1 = 0;
   const y1 = 0;
   const tempX = fieldRect.width;
-  const size = (tempX - x1) / 20;
+  const size = (tempX - x1) / 10;
   const x2 = fieldRect.width - size;
   const y2 = fieldRect.height - size;
 
