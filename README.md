@@ -69,7 +69,7 @@
 1. (HTML)DOM + CSS(external, embedded, inline, user-aget stylesheet) = CSSON
    - compute styles based on CSS cascading rules
 
-![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/csson.png)
+![CSSOM](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/public/images/csson.png)
 
 ### 3️⃣ ⚜️ 성능보장 렌더링 순서!!!
 
@@ -90,7 +90,7 @@
         - 브라우저가 스스로 성능을 개선하기 위해서 - 전체 적인 web을 그리는 것이아니라 layer만 그리면 된다.
       - Layout(배치) + Paint(각 요소, 비트맵 형태로 만들어서 준비 한다.) + Composition
 
-![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/images/render.png)
+![render](https://raw.githubusercontent.com/nomadGeonilJang/2020-front-101/master/public/images/render.png)
 
 ## 💥 DOM 정복하자 실전편!
 
@@ -112,3 +112,6 @@
    - currentTarget: this 바로 나를 가르킨다.
 
 ### 이벤트 위임 : Delegation
+
+- 이벤트 등록을 부모에 하나 등록해서 자식에서 발생하는 이벤트를 ㅈ처리하게한다!
+  - event.target과 event.currentTarget를 잘 활용하면 되요!!
