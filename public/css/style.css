@@ -1,11 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html {
-  width: 100%;
-  height: 100%;
 }
 button {
   border: none;
@@ -14,16 +8,14 @@ button {
 }
 body {
   text-align: center;
-  width: 100%;
-  height: 100%;
 }
 .game {
   min-height: 480px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 80vw;
+  height: 50vh;
   border-radius: 20px;
   background: url(../images/background.png) center/cover;
 }
@@ -78,8 +70,6 @@ body {
   position: relative;
   /* TODO: 당근 */
   margin-top: 40px;
-
-  /* background-color: red; */
 }
 
 .pop-up {
@@ -108,7 +98,7 @@ body {
 
 .pop-up__message {
   display: block;
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 .bug,
