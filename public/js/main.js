@@ -80,8 +80,8 @@ function showPopUpWithText(text) {
 function initGame() {
   field.innerHTML = "";
   gameScore.innerText = CARROT_COUNT;
-  addItem("carrot", CARROT_COUNT, "./public/images/carrot.png");
-  addItem("carrot", BUG_COUNT, "./public/images/bug.png");
+  addItem("carrot", CARROT_COUNT, "../images/carrot.png");
+  addItem("carrot", BUG_COUNT, "../images/bug.png");
 }
 
 function addItem(className, count, imgPath) {
