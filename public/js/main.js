@@ -15,30 +15,59 @@ const popUp = document.querySelector(".pop-up");
 const popUpText = document.querySelector(".pop-up__message");
 const popUpRefresh = document.querySelector(".pop-up__refresh");
 
+const carrotSound = new Audio("./public/sound/carrot_pull.mp3");
+const alertSound = new Audio("./public/sound/alert.wav");
+const bgSound = new Audio("./public/sound/bg.mp3");
+const bugSound = new Audio("./public/sound/bug_pull.mp3");
+const winSound = new Audio("./public/sound/game_win.mp3");
 let started = false;
 let score = 0;
 let timer = undefined;
-
+field.addEventListener("click", onFieldClick);
 gameBtn.addEventListener("click", () => {
   if (started) {
     stopGame();
   } else {
     startGame();
   }
-  started = !started;
+});
+popUpRefresh.addEventListener("click", () => {
+  startGame();
+  hidePopUp();
 });
 
 function stopGame() {
+  started = false;
   stopGameTimer();
+  hideGameButton();
+  showPopUpWithText("REPLAY🌟");
+  stopSound(bgSound);
+  playSound(alertSound);
 }
 function startGame() {
+  started = true;
+  score = 0;
   initGame();
   showStopButton();
+  showGameButton();
   showTimerAndScore();
   startGameTimer();
+  playSound(bgSound);
+}
+function finishGame(win) {
+  started = false;
+  if (win) {
+    playSound(winSound);
+  } else {
+    playSound(bugSound);
+  }
+  hideGameButton();
+  stopGameTimer();
+  showPopUpWithText(win ? "YOU WON 🌟" : "YOU LOST 🍌");
+  stopSound(bgSound);
 }
 function showStopButton() {
-  const icon = document.querySelector(".fa-play");
+  const icon = document.querySelector(".fas");
   icon.classList.add("fa-stop");
   icon.classList.remove("fa-play");
 }
@@ -46,12 +75,14 @@ function showTimerAndScore() {
   gameTimer.style.visibility = "visible";
   gameScore.style.visibility = "visible";
 }
+//⭐️ start
 function startGameTimer() {
   let remainingTimeSec = GAME_DURATION_SEC;
   updateTimerText(remainingTimeSec);
   timer = setInterval(() => {
     if (remainingTimeSec <= 0) {
       clearInterval(timer);
+      finishGame(CARROT_COUNT === score);
       return;
     }
     updateTimerText(--remainingTimeSec);
@@ -63,17 +94,24 @@ function updateTimerText(time) {
   gameTimer.innerText = `${minutes} : ${seconds}`;
 }
 
+//🔥 stop
 function stopGameTimer() {
   clearInterval(timer);
-  hideGameButton();
-  showPopUpWithText("REPLAY🌟");
 }
+//🔥 stop
 function hideGameButton() {
   gameBtn.style.visibility = "hidden";
 }
+function showGameButton() {
+  gameBtn.style.visibility = "visible";
+}
+//🔥 stop
 function showPopUpWithText(text) {
   popUpText.innerText = text;
   popUp.classList.remove("pop-up--hide");
+}
+function hidePopUp() {
+  popUp.classList.add("pop-up--hide");
 }
 
 //TODO: init
@@ -81,7 +119,37 @@ function initGame() {
   field.innerHTML = "";
   gameScore.innerText = CARROT_COUNT;
   addItem("carrot", CARROT_COUNT, "./public/images/carrot.png");
-  addItem("carrot", BUG_COUNT, "./public/images/bug.png");
+  addItem("bug", BUG_COUNT, "./public/images/bug.png");
+}
+
+function onFieldClick(event) {
+  if (!started) {
+    return;
+  }
+  const target = event.target;
+  if (target.matches(".carrot")) {
+    target.remove();
+    score++;
+    playSound(carrotSound);
+    updateScoreBoard();
+    if (score === CARROT_COUNT) {
+      finishGame(true);
+    }
+  } else if (target.matches(".bug")) {
+    stopGameTimer();
+    finishGame(false);
+  }
+}
+function playSound(sound) {
+  sound.currentTime = 0;
+  sound.play();
+}
+function stopSound(sound) {
+  sound.pause();
+}
+
+function updateScoreBoard() {
+  gameScore.innerText = CARROT_COUNT - score;
 }
 
 function addItem(className, count, imgPath) {
