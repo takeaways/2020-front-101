@@ -1,8 +1,8 @@
 "use strict";
 
-const CARROT_COUNT = 5;
-const BUG_COUNT = 5;
-const GAME_DURATION_SEC = 5;
+const CARROT_COUNT = 20;
+const BUG_COUNT = 7;
+const GAME_DURATION_SEC = 20;
 let interval;
 
 const field = document.querySelector(".game__field");
@@ -49,7 +49,6 @@ function startGame() {
   score = 0;
   initGame();
   showStopButton();
-  showGameButton();
   showTimerAndScore();
   startGameTimer();
   playSound(bgSound);
@@ -70,6 +69,7 @@ function showStopButton() {
   const icon = document.querySelector(".fas");
   icon.classList.add("fa-stop");
   icon.classList.remove("fa-play");
+  gameBtn.style.visibility = "visible";
 }
 function showTimerAndScore() {
   gameTimer.style.visibility = "visible";
@@ -102,9 +102,7 @@ function stopGameTimer() {
 function hideGameButton() {
   gameBtn.style.visibility = "hidden";
 }
-function showGameButton() {
-  gameBtn.style.visibility = "visible";
-}
+
 //🔥 stop
 function showPopUpWithText(text) {
   popUpText.innerText = text;
@@ -136,7 +134,6 @@ function onFieldClick(event) {
       finishGame(true);
     }
   } else if (target.matches(".bug")) {
-    stopGameTimer();
     finishGame(false);
   }
 }
