@@ -124,3 +124,7 @@
 1. document.addEventListener("click", this.onClick.bind(this))
    - 함수를 인자로 전달할 떄는 클래스 정보는 같이 전달 되지 않아요!!
    - 그렇기 때문에 클래스 내부의 정보를 전달할 수 없다!!
+
+## Builder Patter
+
+- 무언가 오브젝트를 만들 떄 Builder Pattern을 이용해서 오브젝트를 간단 명료하게 가독성이 좋게 만들 수 있다.

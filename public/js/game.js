@@ -3,7 +3,31 @@
 import Field from "./field.js";
 import * as sound from "./sound.js";
 
-export default class Game {
+//builder Pattern
+export default class GameBuilder {
+  withDuration(duration) {
+    this.gameDuration = duration;
+    return this;
+  }
+  withCarrotCount(number) {
+    this.carrotCount = number;
+    return this;
+  }
+  withBugCount(number) {
+    this.bugCount = number;
+    return this;
+  }
+
+  build() {
+    return new Game(
+      this.gameDuration, //
+      this.carrotCount, //
+      this.bugCount
+    );
+  }
+}
+
+class Game {
   constructor(gameDuration, carrotCount, bugCount) {
     this.gameDuration = gameDuration;
     this.carrotCount = carrotCount;
@@ -85,7 +109,7 @@ export default class Game {
     this.gameScore.style.visibility = "visible";
   }
   //⭐️ start
-  startGameTimer = () => {
+  startGameTimer() {
     let remainingTimeSec = this.gameDuration;
     this.updateTimerText(remainingTimeSec);
     this.timer = setInterval(() => {
@@ -96,7 +120,7 @@ export default class Game {
       }
       this.updateTimerText(--remainingTimeSec);
     }, 1000);
-  };
+  }
   updateTimerText(time) {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
@@ -104,9 +128,9 @@ export default class Game {
   }
 
   //🔥 stop
-  stopGameTimer = () => {
+  stopGameTimer() {
     clearInterval(this.timer);
-  };
+  }
   //🔥 stop
   hideGameButton() {
     this.gameBtn.style.visibility = "hidden";
