@@ -21,9 +21,7 @@ export default class Field {
     this.onItemClick = onItemClick;
   }
 
-  onClick(event) {
-    console.log(this.onItemClick);
-
+  onClick = (event) => {
     const target = event.target;
     if (target.matches(".carrot")) {
       target.remove();
@@ -33,7 +31,7 @@ export default class Field {
       this.onItemClick("bug");
       this.onItemClick && this.onItemClick("bug");
     }
-  }
+  };
 
   #addItem(className, count, imgPath) {
     const x1 = 0;

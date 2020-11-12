@@ -24,7 +24,7 @@ export function playAlert() {
   playSound(alertSound);
 }
 export function playBackground() {
-  stopSound(bgSound);
+  playSound(bgSound);
 }
 export function stopBackground() {
   stopSound(bgSound);

@@ -115,3 +115,12 @@
 
 - 이벤트 등록을 부모에 하나 등록해서 자식에서 발생하는 이벤트를 ㅈ처리하게한다!
   - event.target과 event.currentTarget를 잘 활용하면 되요!!
+
+## this의 바인딩
+
+- bind, call, apply
+- arrow function
+
+1. document.addEventListener("click", this.onClick.bind(this))
+   - 함수를 인자로 전달할 떄는 클래스 정보는 같이 전달 되지 않아요!!
+   - 그렇기 때문에 클래스 내부의 정보를 전달할 수 없다!!
